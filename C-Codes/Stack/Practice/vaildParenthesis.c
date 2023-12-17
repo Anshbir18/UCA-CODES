@@ -1,45 +1,73 @@
-bool isValid(char* s) {
-    int len=strlen(s); //took out the length of tha string
-    if(len%2 !=0){
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+struct Stack {
+    int size;
+    int top;
+    char* arr;
+};
+
+void init_stack(struct Stack* st, int n) {
+    st->top = -1;
+    st->size = n;
+    st->arr = malloc(n * sizeof(char));
+}
+
+bool push(struct Stack* st, char ele) {
+    if (st->top >= st->size - 1) {
         return false;
     }
+    st->top++;
+    st->arr[st->top] = ele;
+    return true;
+}
 
-    // declare a stack with a top pointer to help keep track
+char pop(struct Stack* st) {
+    if (st->top <= -1) {
+        return '0';
+    }
+    char ch = st->arr[st->top];
+    st->top--;
+    return ch;
+}
 
-    int top=0;
-    char*st=malloc(strlen(s)); //malloc for dynamic memory allocation 
+char peek(struct Stack* st) {
+    if (st->top <= -1) {
+        return '0';
+    }
+    char ch = st->arr[st->top];
+    return ch;
+}
+
+bool empty(struct Stack* st) {
+    return st->top == -1;
+}
 
 
-    // now same logic as c++ //if open then push or else check the op with the closing and pop(top--);
+bool isValid(char* s) {
+    struct Stack st;
+    int n=strlen(s);
+    init_stack(&st,n);
 
-    for(int i=0;i<strlen(s);i++){
-        char c = s[i];
 
-        if(s[i]=='(' || s[i]=='[' || s[i]=='{'){
-            st[top]=c;
-            top++;
-         
+    for(int i=0;i<n;i++){
+        if(s[i]=='(' || s[i]=='{'||s[i]=='['){
+            push(&st,s[i]);
         }
         else{
-            if(c==')'){
-                if(top>0 &&st[top-1]=='('){
-                    top--;
-                }
-                else{
-                    return false;
-                }
+            if(empty(&st)){
+                return false;
             }
-            else if(c==']'){
-                if(top>0 && st[top-1]=='['){
-                    top--;
+            else{
+                if(peek(&st)=='[' && s[i]==']'){
+                    pop(&st);
                 }
-                else{
-                    return false;
+                else if(peek(&st)=='(' && s[i]==')'){
+                    pop(&st);
                 }
-            }
-            else if(c=='}'){
-                if(top>0 && st[top-1]=='{'){
-                    top--;
+                else if(peek(&st)=='{' && s[i]=='}'){
+                    pop(&st);
                 }
                 else{
                     return false;
@@ -48,9 +76,9 @@ bool isValid(char* s) {
         }
     }
 
-    free(st); //free memory
-    if(top==0){
+    if(empty(&st)){
         return true;
     }
     return false;
+
 }
