@@ -34,7 +34,40 @@ Clone or download the repository from GitHub:
 ```bash
 git clone https://github.com/rakshit-2/scaler_assignment.git
 
-
+```
 ##Install Dependencies
 
 Navigate to the client directory and install client-side dependencies:
+
+```bash
+cd client
+npm install
+```
+
+
+Navigate to the server directory and install server-side dependencies:
+
+```bash
+cd ../server
+npm install
+```
+
+###3. Run the Project
+
+Client-Side:
+To start the client-side development server, run:
+
+```bash
+cd ../client
+npm start
+```
+Server-Side:
+Before running the server, ensure you have configured environment variables. Create an .env file in the server directory with appropriate configuration.
+
+To start the server, run:
+
+```bash
+
+cd ../server
+npm run dev
+```
