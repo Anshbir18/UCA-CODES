@@ -2,7 +2,7 @@
 
 Welcome to my Cab Booking App project! This application is built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It provides users with a seamless experience to book cabs with various options and price ranges, ensuring quick and efficient travel to their destinations.
 
-## Features
+## 🚀Features
 
 - **Dijkstra's Algorithm Implementation**: The project incorporates Dijkstra's algorithm to find the shortest path between locations, ensuring efficient routing for users.
 - **Interactive UI**: The user interface is designed to be interactive, intuitive, and completely responsive across devices, enhancing user experience.
@@ -35,7 +35,8 @@ Clone or download the repository from GitHub:
 git clone https://github.com/rakshit-2/scaler_assignment.git
 
 ```
-##Install Dependencies
+### 2. Install Dependencies
+
 
 Navigate to the client directory and install client-side dependencies:
 
@@ -52,7 +53,7 @@ cd ../server
 npm install
 ```
 
-###3. Run the Project
+### 3. Run the Project
 
 Client-Side:
 To start the client-side development server, run:
@@ -61,7 +62,7 @@ To start the client-side development server, run:
 cd ../client
 npm start
 ```
-Server-Side:
+##Server-Side:
 Before running the server, ensure you have configured environment variables. Create an .env file in the server directory with appropriate configuration.
 
 To start the server, run:
