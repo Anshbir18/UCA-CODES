@@ -16,16 +16,6 @@ This application utilizes MongoDB as its database solution. MongoDB is a NoSQL d
 
 ## Getting Started
 
-To run the project locally, follow these steps:
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Install dependencies using `npm install`.
-4. Configure MongoDB connection settings.
-5. Run the backend server using `npm run server`.
-6. Run the frontend development server using `npm start`.
-7. Access the application in your browser at `http://localhost:3000`.
-
-## Usage Instructions
 
 ### 1. Clone the Repository
 
